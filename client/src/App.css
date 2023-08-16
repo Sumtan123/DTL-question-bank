@@ -1,4 +1,4 @@
-#root {
+/* #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
@@ -39,4 +39,34 @@
 
 .read-the-docs {
   color: #888;
+} */
+
+body{
+  padding:0px;
+  margin:0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.topBar{
+  background-color: orangered;
+  height:50px;
+  color:white;
+  font-size:10px;
+  padding:10px;
+  box-shadow: 0 3px 2px gray;
+  margin-top: auto;
+}
+
+
+.section{
+  height:100px;
+  margin-top: 0px;
+  background-image: url('https://img.freepik.com/free-vector/dark-wavy-colors-background_23-2148403785.jpg?size=626&ext=jpg&ga=GA1.1.1873050670.1691914218&semt=ais');
+  background-size: cover;
+}
+
+.section h3{
+  color:white;
+  text-align: center;
+  font-style: italic;
 }
