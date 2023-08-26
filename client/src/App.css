@@ -58,15 +58,3 @@ body{
 }
 
 
-.section{
-  height:100px;
-  margin-top: 0px;
-  background-image: url('https://img.freepik.com/free-vector/dark-wavy-colors-background_23-2148403785.jpg?size=626&ext=jpg&ga=GA1.1.1873050670.1691914218&semt=ais');
-  background-size: cover;
-}
-
-.section h3{
-  color:white;
-  text-align: center;
-  font-style: italic;
-}

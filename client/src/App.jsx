@@ -2,17 +2,14 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-
+import Oneword from './oneword_ans/oneword'
+import questionsData from '../../client/questions/one_word.json'
 function App() {
-
   return (
     <>
       <div className="container">
         <div className="topBar"><h1>Educate</h1></div>
-        <div className="section">
-          <h3>Section 1-Choose the Correct Option</h3>
-          <h3>Level : Easy</h3>
-        </div>
+        <Oneword />
       </div>
     </>
   )
