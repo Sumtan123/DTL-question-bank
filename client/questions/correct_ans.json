@@ -1,0 +1,23 @@
+[
+    {
+        "option1":"crow",
+        "option1_url":"../images/crow.png",
+        "option2":"pigeon",
+        "option2_url":"../images/pigeon.png",
+        "option3":"ostrich",
+        "option3_url":"../images/ostrich.png",
+        "option4":"swan",
+        "option4_url":"../images/swam.png",
+        "answer":"option3",
+        "reason":"ostrich cant fly"
+    },
+    {
+        "option1":"lion",		
+        "option2":"dog",
+        "option3":"tiger",
+        "option4":"cat",
+        "answer":"option2",
+        "reason":"Lion, cat,tiger are felines"
+
+    }
+]
