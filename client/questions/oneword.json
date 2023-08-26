@@ -1,0 +1,96 @@
+[
+	{
+		"difficulty":"easy",
+		"question":"The national animal of India is ",
+		"answer":"Tiger",
+		"points":10
+	},
+	
+	{
+		"difficulty":"easy",
+		"question":"The national bird of India is ",
+		"answer":"Peacock",
+		"points":10
+	},
+
+	{
+		"difficulty":"easy",
+		"question":"The largest animal on land is ",
+		"answer":"Elephant",
+		"points":10
+	},
+
+	{
+		"difficulty":"medium",
+		"question":"I enjoy eating leaves and have an extremely long neck. What am I?",
+		"answer":"Giraffe",
+		"points":20
+	},
+
+	{
+		"difficulty":"medium",
+		"question":"I have a lush mane and am a predator in the jungle. What am I?",
+		"answer":"Lion",
+		"points":20
+	},
+
+	{
+		"difficulty":"medium",
+		"question":"I have black and white stripes on my body and enjoy eating grass. What am I?",
+		"answer":"Zebra",
+		"points":20
+	},
+
+	{
+		"difficulty":"medium",
+		"question":"I have black and white stripes on my body and enjoy eating grass. What am I?",
+		"answer":"Zebra",
+		"points":20
+	},
+
+	{
+		"difficulty":"medium",
+		"question":"I have black feathers and often fly in flocks. What am I?",
+		"answer":"Crow",
+		"points":20
+	},
+
+	{
+		"difficulty":"hard",
+		"question":"The bird that cannot fly is ",
+		"answer":"Ostrich",
+		"points":30
+	},
+	
+	{
+		"difficulty":"hard",
+		"question":"I have 8 tentacles and am a predator in the ocean. Who am I?",
+		"answer":"Octopus",
+		"points":30
+	}
+
+	{
+		"difficulty":"medium",
+		"question":"I have 8 legs and weave beautiful webs. What am I?",
+		"answer":"Spider",
+		"points":20
+	},
+
+	{
+		"difficulty":"medium",
+		"question":"I have beautiful white feathers and am found in lakes. Who am I?",
+		"answer":"Swan",
+		"points":20
+	}
+
+]
+		
+
+
+
+
+
+
+
+
+
