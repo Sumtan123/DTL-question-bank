@@ -43,8 +43,8 @@
 
 	{
 		"difficulty":"medium",
-		"question":"I have black and white stripes on my body and enjoy eating grass. What am I?",
-		"answer":"Zebra",
+		"question":"I am a man's best friend. Who am I?",
+		"answer":"Dog",
 		"points":20
 	},
 
@@ -81,7 +81,43 @@
 		"question":"I have beautiful white feathers and am found in lakes. Who am I?",
 		"answer":"Swan",
 		"points":20
+	},
+
+	{
+		"difficulty":"hard",
+		"question":"I carry heavy loads and am related to horses. Who am I?",
+		"answer":"Donkey",
+		"points":30
+	},
+
+	{
+		"difficulty":"medium",
+		"question":"Which bird was used as a symbol of peace?",
+		"answer":"Dove",
+		"points":20
+	},
+
+	{
+		"difficulty":"hard",
+		"question":"I eat dead bodies and travel in packs. Who am I?",
+		"answer":"Hyena",
+		"points":30
+	},
+
+	{
+		"difficulty":"hard",
+		"question":"I can twist my neck by 270 degrees. Who am I?",
+		"answer":"Owl",
+		"points":30
+	},
+
+	{
+		"difficulty":"easy",
+		"question":"I drink milk and eat mice",
+		"answer":"Cat",
+		"points":10
 	}
+
 
 ]
 		

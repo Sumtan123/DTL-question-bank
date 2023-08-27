@@ -4,6 +4,7 @@ import questionsData from '../../questions/one_word.json'
 const Oneword = () => {
     return (
         <>
+            <div className="onewordbg">
             {questionsData.map((item) => (
                 <>
                     <div className="section">
@@ -23,6 +24,7 @@ const Oneword = () => {
                     </div>
                 </>
             ))}
+            </div>
         </>
     )
 }
