@@ -8,10 +8,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const Correct_ans = () => {
 	const [option, selectedOption] = useState(null);
 	const { speak } = useSpeechSynthesis();
-	const [correct,isCorrect]= useState(false);
+	const [correct,isCorrect]= useState(null);
 	const text = "Choose the odd one out";
 	const speakCorrect = "That's right you are correct";
-	const isWrong = "Sorry you are wrong";
+	const isWrong = "Sorry you are wrong kid! try again";
 	const handleOnClick = () => {
 		speak({ text:text  });
 	};
@@ -70,8 +70,8 @@ const Correct_ans = () => {
 							<Button variant="warning" onClick={() => handleSubmit(question.answer)}>Submit</Button>
 							
 						</form>
-						{( correct === true )&& <div style={{display:"flex",margin:"10px", justifyContent:"center",alignItems:'center',fontSize:'1.5rem', color:''}}>You are right Kid <br/>{question.reason}</div>}
-						{( correct === false )&& <div style={{display:"flex",margin:"10px", justifyContent:"center",alignItems:'center',fontSize:'1.5rem', color:''}}>You are wrong Kid, Try Again</div>}
+						{( correct === true )&& <div style={{display:"flex",margin:"10px", justifyContent:"center",alignItems:'center',fontSize:'1.5rem', color:'black',backgroundColor:"lightgreen"}}>You are right Kid <br/>{question.reason}</div>}
+						{( correct === false )&& <div style={{display:"flex",margin:"10px", justifyContent:"center",alignItems:'center',fontSize:'1.5rem',color:'black', backgroundColor:'lightgreen'}}>You are wrong Kid, Try Again</div>}
 					</div>
 				</div>
 			))}
