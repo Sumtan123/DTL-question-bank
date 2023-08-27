@@ -3,12 +3,13 @@
 }
 .correct{
     // background: url("../images/correct_bg.jpeg.jpg") fixed center no-repeat;
-    background-image: url("../images/correct_bg.jpeg.jpg");
-    height: 38rem;
+   height: 38rem;
+   background-image: url('https://static.vecteezy.com/system/resources/thumbnails/003/093/932/small/cartoon-nature-forest-scenery-free-vector.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     z-index: -1;
+    opacity: 0.9;
     display: flex;
     flex-direction: row;
     .left{
@@ -42,6 +43,14 @@
         .formi{
             display: flex;
             margin-top: 150px;
+            justify-content: center;
+            label{
+                margin: 0px;
+            }
+            button{
+                height: 50%;
+                margin: 10px;
+            }
         }
     }
 }
