@@ -1,7 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './oneword.css'
 import questionsData from '../../questions/one_word.json'
 const Oneword = () => {
+    const [givenAns,setGivenAns]= useState('');
+    const [correct,setCorrect]=useState(null);
+    const handleChange =(e)=>{
+        setGivenAns(e.target.value)
+    }
+    const handleSubmit = (param)=>{
+        if(param === givenAns){
+            console.log("true")
+            setCorrect(true)
+        }
+        else   {
+            console.log('false')
+            setCorrect(false)
+        }
+    }
     return (
         <>
             <div className="onewordbg">
@@ -18,9 +33,14 @@ const Oneword = () => {
                                 type="text"
                                 placeholder="Type your answer here"
                                 className="answer-input"
+                                onChange={handleChange}
                             />
-                            <button className="submit-button">Submit</button>
+                            {correct===true && <div>You are right Kid</div>}
+                        {correct===false && <div>Sorry You are wrong, try again</div>}
+                            <button className="submit-button" onClick={()=>handleSubmit(item.answer)}>Submit</button>
+                            
                         </div>
+                        
                     </div>
                 </>
             ))}
