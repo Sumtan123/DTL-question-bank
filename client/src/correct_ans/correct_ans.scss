@@ -1,0 +1,57 @@
+.img{
+    width: 100%;
+}
+.correct{
+    // background: url("../images/correct_bg.jpeg.jpg") fixed center no-repeat;
+   height: 38rem;
+   background-image: url('https://img.freepik.com/free-vector/dark-wavy-colors-background_23-2148403785.jpg?size=626&ext=jpg&ga=GA1.1.1873050670.1691914218&semt=ais');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
+    opacity: 0.9;
+    display: flex;
+    flex-direction: row;
+    .left{
+        flex: 1;
+        .talk{
+            cursor: pointer;
+            position: relative;
+            text-align: center;
+            color: white;
+            background-image: url("../images/girl_talk.png");
+            background-size: 330px;
+            background-repeat: no-repeat;
+             background-position: center;
+            width: auto;
+            height: 100%;
+
+            .questiona{
+                position: absolute;
+                top: 140px;
+                left: 100px;
+                color: brown;
+                font-size: 1.2rem;
+            }
+        }
+    }
+    .right{
+        color: white;
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        .formi{
+            display: flex;
+            margin-top: 150px;
+            justify-content: center;
+            label{
+                margin: 0px;
+            }
+            button{
+                height: 50%;
+                margin: 10px;
+            }
+        }
+    }
+}
+
