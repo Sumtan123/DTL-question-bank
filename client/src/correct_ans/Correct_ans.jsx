@@ -34,6 +34,7 @@ const Correct_ans = () => {
 	};
 	return (
 		<>
+		<div className="topBar"><h1>Educate</h1></div>
 			{questions.map(question => (
 				<div className='correct'>
 					<div className="left">

@@ -1,9 +1,13 @@
 import React, { useState } from 'react'
 import './oneword.css'
 import questionsData from '../../questions/one_word.json'
+import { useSpeechSynthesis } from 'react-speech-kit';
 const Oneword = () => {
     const [givenAns, setGivenAns] = useState('');
     const [correct, setCorrect] = useState(null);
+    const { speak } = useSpeechSynthesis();
+    const speakCorrect = "That's right, you are correct";
+	const isWrong = "Sorry, you are wrong, try again";
     const handleChange = (e) => {
         setGivenAns(e.target.value)
     }
@@ -13,9 +17,11 @@ const Oneword = () => {
         if (userInput === correctAnswer) {
             console.log("true");
             setCorrect(true);
+            speak({ text: speakCorrect});
         } else {
             console.log('false');
             setCorrect(false);
+            speak({ text:isWrong});
         }
     }
     return (

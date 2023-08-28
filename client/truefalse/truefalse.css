@@ -7,3 +7,33 @@
     box-shadow: 0 3px 2px gray;
     margin-top: auto;
   }
+
+  .template1{
+    height:100vh;  
+    font-family: 'Poppins', sans-serif;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-image: url('https://img.freepik.com/premium-photo/abstract-green-background-with-tropical-leaves-with-copy-space-ai-generated_852336-21963.jpg?size=626&ext=jpg&ga=GA1.2.1873050670.1691914218&semt=ais');
+  }
+
+  .template1 h3{
+    position:absolute;
+    margin-left: 250px;
+    margin-top:150px;
+    color: yellowgreen;
+  }
+
+  .truefalsebg{
+    background-image: url('https://img.freepik.com/free-photo/curvy-narrow-muddy-road-dark-forest-surrounded-by-greenery-little-light-coming-from_181624-1825.jpg?size=626&ext=jpg&ga=GA1.1.1873050670.1691914218&semt=ais');
+  }
+
+  .rw{
+    background-color: aliceblue;
+  }
+
+  .label1{
+    position: absolute;
+    margin-left:250px;
+    margin-top: 200px;
+    color: beige;
+  }
