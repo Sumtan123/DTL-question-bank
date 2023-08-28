@@ -65,3 +65,9 @@
   .onewordbg{
     background-image: url('https://img.freepik.com/free-photo/beautiful-shot-forest-with-tall-green-trees_181624-20615.jpg?size=626&ext=jpg&ga=GA1.1.1873050670.1691914218&semt=ais');
   }
+
+  .rw{
+    position: absolute;
+    margin-top: 300px;
+    margin-left: 250px;
+  }
