@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Oneword from './oneword_ans/oneword'
 import Correct_ans from './correct_ans/Correct_ans'
+import Truefalse from '../truefalse/truefalse'
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 import questionsData from '../../client/questions/one_word.json'
 const Card = ({ imageSrc, title, description, path }) => (
@@ -36,7 +37,12 @@ function App() {
             description="Explore by clicking on the button below!"
             path="/correctans" // Replace with the correct path
           />
-          {/* Add more cards here */}
+          <Card
+            imageSrc="https://img.freepik.com/free-vector/ethical-dilemma-illustration_23-2148746394.jpg?size=626&ext=jpg&ga=GA1.1.1873050670.1691914218&semt=ais"
+            title="True or False"
+            description="Explore by clicking on the button below!"
+            path="/truefalse" // Replace with the correct path
+          />
         </div>
       </div>
     </>

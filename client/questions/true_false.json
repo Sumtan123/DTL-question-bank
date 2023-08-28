@@ -1,0 +1,176 @@
+[
+	{
+	"difficulty":"easy",
+	"question":"Every Snake is poisonous.",
+	"answer":"False",
+	"points":10,
+	"reason":"Not all snakes are poisonous"
+	},
+
+	{
+	"difficulty":"medium",
+	"question":"Spider has eight pairs of legs",
+	"answer":"False",
+	"points":20,
+	"reason":"A spider has 8 legs, therefore, 4 pairs of legs."
+	},
+
+	{
+	"difficulty":"easy",
+	"question":"Buffalo is a wild animal.",
+	"answer":"False",
+	"points":10,
+	"reason":"Buffalo is a domesticated animal."
+	},
+
+
+	{
+	"difficulty":"easy",
+	"question":"Ostrich cannot fly.",
+	"answer":"True",
+	"points":10,
+	"reason":""
+	},
+
+
+	{
+	"difficulty":"easy",
+	"question":"Tiger is a wild animal",
+	"answer":"True",
+	"points":10,
+	"reason":""
+	},
+
+
+	{
+	"difficulty":"easy",
+	"question":"A parrot can mimic human language.",
+	"answer":"True",
+	"points":10,
+	"reason":""
+	},
+
+
+	{
+	"difficulty":"medium",
+	"question":"Cockroaches have feet and can crawl.",
+	"answer":"False",
+	"points":20,
+	"reason":"Cockroaches walk, they don't crawl."
+	},
+
+
+	{
+	"difficulty":"medium",
+	"question":"Centipedes have feet and crawl.",
+	"answer":"True",
+	"points":20,
+	"reason":""
+	},
+
+
+	{
+	"difficulty":"easy",
+	"question":"Hyenas eat rotten meat.",
+	"answer":"True",
+	"points":10,
+	"reason":""
+	},
+
+
+	{
+	"difficulty":"easy",
+	"question":"Monkeys have sharp claws.",
+	"answer":"True",
+	"points":10,
+	"reason":""
+	},
+
+
+	{
+	"difficulty":"medium",
+	"question":"Monkeys have sharp talons and a long tail.",
+	"answer":"False",
+	"points":20,
+	"reason":"Monkeys do not have talons, talons are a characteristic of birds."
+	},
+
+
+	{
+	"difficulty":"easy",
+	"question":"Octupus has eight tentacles.",
+	"answer":"True",
+	"points":10,
+	"reason":""
+	},
+
+
+	{
+	"difficulty":"easy",
+	"question":"Octopus can spray ink.",
+	"answer":"True",
+	"points":10,
+	"reason":""
+	},
+
+
+	{
+	"difficulty":"easy",
+	"question":"Crocodiles have huge jaws.",
+	"answer":"True",
+	"points":10,
+	"reason":""
+	},
+
+
+	{
+	"difficulty":"medium",
+	"question":"Chickens produce crowing sounds at daybreak.",
+	"answer":"False",
+	"points":20,
+	"reason":"Roosters produce crowing sounds at daybreak, not chickens."
+	},
+
+
+	{
+	"difficulty":"easy",
+	"question":"Bats hang upside down on trees.",
+	"answer":"True",
+	"points":10,
+	"reason":""
+	},
+
+
+	{
+	"difficulty":"medium",
+	"question":"Bats cannot fly, they can only hover.",
+	"answer":"False",
+	"points":20,
+	"reason":"Bats can fly."
+	},
+
+	{
+	"difficulty":"easy",
+	"question":"All squirrels have bushy tails.",
+	"answer":"True",
+	"points":10,
+	"reason":""
+	},
+
+	{
+	"difficulty":"easy",
+	"question":"A komodo dragon is a dragon.",
+	"answer":"False",
+	"points":10,
+	"reason":"Komodo dragons are large lizards."
+	},
+
+	{
+	"difficulty":"easy",
+	"question":"Wolves hunt in packs.",
+	"answer":"True",
+	"points":10,
+	"reason":""
+	}
+
+]
