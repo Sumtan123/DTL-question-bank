@@ -71,3 +71,13 @@
     margin-top: 300px;
     margin-left: 250px;
   }
+
+  .topBar{
+    background-color: orangered;
+    height:50px;
+    color:white;
+    font-size:10px;
+    padding:10px;
+    box-shadow: 0 3px 2px gray;
+    margin-top: auto;
+  }

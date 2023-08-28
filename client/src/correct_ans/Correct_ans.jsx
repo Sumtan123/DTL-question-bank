@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import './correct_ans.scss';
 import questions from '../../questions/correct_ans.json';
 import { useSpeechSynthesis } from 'react-speech-kit';
-import crow from '../images/crow.png';
+//import crow from '../images/crow.png';
 import Button from 'react-bootstrap/Button';
-import 'bootstrap/dist/css/bootstrap.min.css';
+//import 'bootstrap/dist/css/bootstrap.min.css';
 const Correct_ans = () => {
 	const [option, selectedOption] = useState(null);
 	const { speak } = useSpeechSynthesis();

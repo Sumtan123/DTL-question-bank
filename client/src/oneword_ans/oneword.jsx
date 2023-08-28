@@ -20,6 +20,7 @@ const Oneword = () => {
     }
     return (
         <>
+        <div className="topBar"><h1>Educate</h1></div>
             <div className="onewordbg">
                 {questionsData.map((item) => (
                     <>
