@@ -1,9 +1,82 @@
-import React from 'react'
-import './correct_ans.scss'
+import React, { useState } from 'react';
+import './correct_ans.scss';
+import questions from '../../questions/correct_ans.json';
+import { useSpeechSynthesis } from 'react-speech-kit';
+import crow from '../images/crow.png';
+import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
 const Correct_ans = () => {
-  return (
-    <div className='correct'>Correct_ans</div>
-  )
-}
+	const [option, selectedOption] = useState(null);
+	const { speak } = useSpeechSynthesis();
+	const [correct,isCorrect]= useState(null);
+	const text = "Choose the odd one out";
+	const speakCorrect = "That's right you are correct";
+	const isWrong = "Sorry you are wrong kid! try again";
+	const handleOnClick = () => {
+		speak({ text:text  });
+	};
+	const handleOptionChange = (event) => {
+		console.log(event.target.value);
+		selectedOption(event.target.value);
+	};
+	const handleSubmit = (param) => {
+		if (param === option)
+		{	console.log("true");
+		speak({ text: speakCorrect});
+			isCorrect(true);
+			
 
-export default Correct_ans
+	}
+		else
+			{console.log("false");
+			isCorrect(false);
+			speak({ text:isWrong});}
+	};
+	return (
+		<>
+			{questions.map(question => (
+				<div className='correct'>
+					<div className="left">
+						<div className="talk" onClick={handleOnClick}>
+							<div className="questiona">
+								Choose the Odd one Out!!
+							</div>
+						</div>
+					</div>
+					<div className="right">
+						<form onSubmit=''className='formi'>
+							<label>
+								<input type="radio" value="option1" name="ans" onChange={handleOptionChange} />
+								{question.option1}
+								<div><img src={question?.option1_url} alt="" style={{ width: "50%" }} /></div>
+							</label>
+							<br />
+							<label>
+								<input type="radio" value="option2" name='ans' onChange={handleOptionChange} />
+								{question.option2}
+								<div><img src={question?.option2_url} alt="" style={{ width: "50%" }} /></div>
+							</label>
+							<br />
+							<label>
+								<input type="radio" value="option3" name='ans' onChange={handleOptionChange} />
+								{question.option3}
+								<div><img src={question?.option3_url} alt="" style={{ width: "50%" }} /></div>
+							</label>
+							<label>
+								<input type="radio" value="option4" name='ans' onChange={handleOptionChange} />
+								{question.option4}
+								<div><img src={question?.option4_url} alt="" style={{ width: "50%" }} /></div>
+							</label>
+							<Button variant="warning" onClick={() => handleSubmit(question.answer)}>Submit</Button>
+							
+						</form>
+						{( correct === true )&& <div style={{display:"flex",margin:"10px", justifyContent:"center",alignItems:'center',fontSize:'1.5rem', color:'black',backgroundColor:"lightgreen"}}>You are right Kid <br/>{question.reason}</div>}
+						{( correct === false )&& <div style={{display:"flex",margin:"10px", justifyContent:"center",alignItems:'center',fontSize:'1.5rem',color:'black', backgroundColor:'lightgreen'}}>You are wrong Kid, Try Again</div>}
+					</div>
+				</div>
+			))}
+		</>
+	);
+};
+
+export default Correct_ans;
