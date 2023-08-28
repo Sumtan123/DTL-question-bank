@@ -31,7 +31,7 @@ const Truefalse = () => {
                 {questionsData.map((item) => (
                     <>
                         <div className="section">
-                            <h3>True or False</h3>
+                            <h3>Section 3 - True or False</h3>
                             <h3>Level : {item.difficulty}</h3>
                         </div>
                         <div className="template1">
