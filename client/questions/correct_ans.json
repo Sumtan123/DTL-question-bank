@@ -1,27 +1,239 @@
 [
-    {
+    {  "difficulty":"medium",
         "option1":"crow",
-        "option1_url":"https://o.remove.bg/downloads/e8b89f82-34d3-4b7c-afbd-02ca2f465432/image-removebg-preview.png",
+        "option1_url":"https://img.freepik.com/free-vector/ravan-white-background_1308-21824.jpg?size=626&ext=jpg&ga=GA1.2.1775779778.1693244217&semt=sph",
         "option2":"pigeon",
-        "option2_url":"https://o.remove.bg/downloads/2ef56cbf-0c50-4553-bc2a-685d3328e136/image-removebg-preview.png",
+        "option2_url":"https://img.freepik.com/free-vector/pigeon-standing-log_1308-91000.jpg?size=626&ext=jpg&ga=GA1.1.1775779778.1693244217&semt=sph",
         "option3":"ostrich",
-        "option3_url":"https://o.remove.bg/downloads/937cb26b-6b64-40cc-8c46-fd241ea44bda/image-removebg-preview.png",
+        "option3_url":"https://img.freepik.com/free-vector/common-ostrich-struthio-camelus-illustrated_53876-35012.jpg?size=626&ext=jpg&ga=GA1.1.1775779778.1693244217&semt=sph",
         "option4":"swan",
-        "option4_url":"https://o.remove.bg/downloads/2d080e67-ecfb-4a73-a900-6d2ba2b48608/image-removebg-preview.png",
+        "option4_url":"https://img.freepik.com/free-vector/vector-mute-swan-bird-hand-drawn_53876-127743.jpg?size=626&ext=jpg&ga=GA1.1.1775779778.1693244217&semt=sph",
         "answer":"option3",
-        "reason":"ostrich cant fly"
+        "points":20,
+        "reason":"ostrich cant fly",
+        "id":1
     },
     {
+        "difficulty":"medium",
         "option1":"lion",
-        "option1_url":"https://o.remove.bg/downloads/19469704-20ff-4c74-a092-97d707ade24b/image-removebg-preview.png",		
+        "option1_url":"",
         "option2":"dog",
-        "option2_url":"https://o.remove.bg/downloads/c8e1b1f9-414b-4674-9513-6e0b309ff3d2/image-removebg-preview.png",
-        "option3":"tiger",
-        "option3_url":"https://o.remove.bg/downloads/aa8dfa43-f03b-482c-98f8-5f1cb74dd7b5/image-removebg-preview.png",
-        "option4":"cat",
-        "option4_url":"https://o.remove.bg/downloads/ab7a0c28-5111-4659-b7f2-a2f32e6a4499/image-removebg-preview.png",
+        "option2_url":"",
+        "option3":"cat",
+        "option3_url":"",
+        "option4":"tiger",
+        "option4_url":"",
         "answer":"option2",
-        "reason":"Lion, cat,tiger are felines"
-
-    }
+        "points":20,
+        "reason":"Lion, cat, tiger are all felines. Dog is a canine.",
+        "id":2
+        },
+    
+        {
+        "difficulty":"medium",
+        "option1":"hyena",
+        "option1_url":"",
+        "option2":"tiger",
+        "option2_url":"",
+        "option3":"dog",
+        "option3_url":"",
+        "option4":"wolf",
+        "option4_url":"",
+        "answer":"option2",
+        "points":20,
+        "id":3,
+        "reason":"Dog, hyena, wolf are canines. Tiger is a feline."
+        },
+    
+        {
+        "difficulty":"easy",
+        "option1":"Octopus",
+        "option1_url":"",
+        "option2":"Snail",
+        "option2_url":"",
+        "option3":"Cat",
+        "option3_url":"",
+        "option4":"Squid",
+        "option4_url":"",
+        "answer":"option3",
+        "points":10,
+        "id":4,
+        "reason":"Cat is not a marine creature."
+        },
+    
+        {
+        "difficulty":"hard",
+        "option1":"Bat",
+        "option1_url":"",
+        "option2":"Cat",
+        "option2_url":"",
+        "option3":"Dog",
+        "option3_url":"",
+        "option4":"Crow",
+        "option4_url":"",
+        "answer":"option4",
+        "points":30,
+        "id":5,
+        "reason":"Bat, Cat and Dog are mammals but a crow is not. "
+        },
+    
+        {
+        "difficulty":"easy",
+        "option1":"Piranha",
+        "option1_url":"",
+        "option2":"Shark",
+        "option2_url":"",
+        "option3":"Whale",
+        "option3_url":"",
+        "option4":"Swordfish",
+        "option4_url":"",
+        "answer":"option3",
+        "points":10,
+        "id":6,
+        "reason":"Piranha, shark and swordfish are marine hunters."
+        },
+    
+        {
+        "difficulty":"easy",
+        "option1":"Horse",
+        "option1_url":"",
+        "option2":"Dog",
+        "option2_url":"",
+        "option3":"Bear",
+        "option3_url":"",
+        "option4":"Cow",
+        "option4_url":"",
+        "answer":"option3",
+        "points":10,
+        "id":7,
+        "reason":"Bear is a wild animal."
+        },
+    
+        {
+        "difficulty":"easy",
+        "option1":"Ant",
+        "option1_url":"",
+        "option2":"Mantis",
+        "option2_url":"",
+        "option3":"Spider",
+        "option3_url":"",
+        "option4":"Dog",
+        "option4_url":"",
+        "answer":"option4",
+        "points":10,
+        "id":8,
+        "reason":"Dog is not an insect."
+        },
+    
+        {
+        "difficulty":"easy",
+        "option1":"Squirrel",
+        "option1_url":"",
+        "option2":"Lion",
+        "option2_url":"",
+        "option3":"Deer",
+        "option3_url":"",
+        "option4":"Elephant",
+        "option4_url":"",
+        "answer":"option2",
+        "points":10,
+        "id":9,
+        "reason":"Only lions hunt their prey among these."
+        },
+    
+        {
+        "difficulty":"easy",
+        "option1":"Tiger",
+        "option1_url":"",
+        "option2":"Lion",
+        "option2_url":"",
+        "option3":"Bear",
+        "option3_url":"",
+        "option4":"Elephant",
+        "option4_url":"",
+        "answer":"option4",
+        "points":10,
+        "id":10,
+        "reason":"Elephants are not hunters."
+        },
+    
+        {
+        "difficulty":"easy",
+        "option1":"Bee",
+        "option1_url":"",
+        "option2":"Snake",
+        "option2_url":"",
+        "option3":"Spider",
+        "option3_url":"",
+        "option4":"Scorpion",
+        "option4_url":"",
+        "answer":"option2",
+        "points":10,
+        "id":11,
+        "reason":"Snake is not an insect."
+        },
+    
+        {
+        "difficulty":"medium",
+        "option1":"Bee",
+        "option1_url":"",
+        "option2":"Horse",
+        "option2_url":"",
+        "option3":"Spider",
+        "option3_url":"",
+        "option4":"Snake",
+        "option4_url":"",
+        "answer":"option2",
+        "points":20,
+        "id":12,
+        "reason":"Horse is not a poisonous animal."
+        },
+    
+        {
+        "difficulty":"easy",
+        "option1":"Hamster",
+        "option1_url":"",
+        "option2":"Dog",
+        "option2_url":"",
+        "option3":"Wolf",
+        "option3_url":"",
+        "option4":"Parrot",
+        "option4_url":"",
+        "answer":"option3",
+        "points":10,
+        "id":13,
+        "reason":"Wolf is not a domesticated animal."
+        },
+    
+        {
+        "difficulty":"medium",
+        "option1":"Frog",
+        "option1_url":"",
+        "option2":"Pig",
+        "option2_url":"",
+        "option3":"Zebra",
+        "option3_url":"",
+        "option4":"Cheetah",
+        "option4_url":"",
+        "answer":"option1",
+        "points":20,
+        "id":14,
+        "reason":"Only frog can dwell on both land and water."
+        },
+    
+        {
+        "difficulty":"hard",
+        "option1":"Hyena",
+        "option1_url":"",
+        "option2":"Vulture",
+        "option2_url":"",
+        "option3":"Crow",
+        "option3_url":"",
+        "option4":"Jackal",
+        "option4_url":"",
+        "answer":"option3",
+        "points":30,
+        "id":15,
+        "reason":"Other than crow, all other animals feed on carrion."
+        }
 ]
