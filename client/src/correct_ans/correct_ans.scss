@@ -1,10 +1,19 @@
 .img{
     width: 100%;
 }
+.topBar{
+    background-color: orangered;
+    height:50px;
+    color:white;
+    font-size:10px;
+    padding:10px;
+    box-shadow: 0 3px 2px gray;
+    margin-top: auto;
+  }
 .correct{
     // background: url("../images/correct_bg.jpeg.jpg") fixed center no-repeat;
    height: 40rem;
-   margin-top: 30px;
+   margin-bottom: 30px;
    background-image: url(../images/correct_bg.jpeg.jpg);
     background-size: cover;
     background-repeat: no-repeat;
