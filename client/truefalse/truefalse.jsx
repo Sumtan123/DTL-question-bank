@@ -4,7 +4,7 @@ import questionsData from '../questions/true_false.json'
 import { useSpeechSynthesis } from 'react-speech-kit';
 const Truefalse = () => {
     const [selectedOption, setSelectedOption] = useState(null);
-    const [isCorrect, setIsCorrect] = useState(null);
+    const [isCorrect, setIsCorrect] = useState({});
     const { speak } = useSpeechSynthesis();
     const speakCorrect = "That's right you are correct";
 	const isWrong = "Sorry you are wrong, try again";
@@ -13,15 +13,28 @@ const Truefalse = () => {
         setSelectedOption(event.target.value);
     };
 
-    const handleSubmit = (param) => {
-        if (param === selectedOption) {
+    const handleSubmit = (param1,param2) => {
+        if (param1 === selectedOption) {
             console.log("true");
-            setIsCorrect(true);
+            
             speak({ text: speakCorrect});
-        } else {
+            setIsCorrect(prevCorrect => ({
+                ...prevCorrect,
+                [param2]: true,
+              }));
+        }
+            else if(selectedOption===null){
+                return 
+            } 
+        
+        else {
             console.log("false");
-            setIsCorrect(false);
+            
             speak({ text:isWrong});
+            setIsCorrect(prevCorrect => ({
+                ...prevCorrect,
+                [param2]: false,
+              }));
         }
     };
     return (
@@ -46,9 +59,9 @@ const Truefalse = () => {
                                     <input type="radio" value="False" name="ans" onChange={handleOptionChange} />
                                     False
                                 </label>
-                                <button className="submit-button" onClick={() => handleSubmit(item.answer)}>Submit</button>
-                                {isCorrect === true && <div className="rw">You are right!!</div>}
-                                {isCorrect === false && <div className="rw">Sorry You are wrong, try again</div>}
+                                <button className="submit-button" onClick={() => handleSubmit(item.answer,item.id)}>Submit</button>
+                                {isCorrect[item.id] === true && <div className="rw">You are right!! </div>}
+                                {isCorrect[item.id] === false && <div className="rw">Sorry You are wrong, try again</div>}
                             </div>
                         </div>
                     </>

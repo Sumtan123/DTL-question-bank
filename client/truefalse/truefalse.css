@@ -28,7 +28,11 @@
   }
 
   .rw{
-    background-color: aliceblue;
+    background-color: rgb(115, 237, 115);
+    padding: 5px;
+    /* margin: 10px; */
+    color: white;
+    border-radius: 10px;
   }
 
   .label1{

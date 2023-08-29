@@ -1,5 +1,6 @@
 [
 	{
+	"id":1,
 	"difficulty":"easy",
 	"question":"Every Snake is poisonous.",
 	"answer":"False",
@@ -8,6 +9,7 @@
 	},
 
 	{
+		"id":2,
 	"difficulty":"medium",
 	"question":"Spider has eight pairs of legs",
 	"answer":"False",
@@ -16,6 +18,7 @@
 	},
 
 	{
+		"id":3,
 	"difficulty":"easy",
 	"question":"Buffalo is a wild animal.",
 	"answer":"False",
@@ -25,6 +28,7 @@
 
 
 	{
+		"id":4,
 	"difficulty":"easy",
 	"question":"Ostrich cannot fly.",
 	"answer":"True",
@@ -34,6 +38,7 @@
 
 
 	{
+		"id":5,
 	"difficulty":"easy",
 	"question":"Tiger is a wild animal",
 	"answer":"True",
@@ -43,6 +48,7 @@
 
 
 	{
+		"id":6,
 	"difficulty":"easy",
 	"question":"A parrot can mimic human language.",
 	"answer":"True",
@@ -52,6 +58,7 @@
 
 
 	{
+		"id":7,
 	"difficulty":"medium",
 	"question":"Cockroaches have feet and can crawl.",
 	"answer":"False",
@@ -61,6 +68,7 @@
 
 
 	{
+		"id":8,
 	"difficulty":"medium",
 	"question":"Centipedes have feet and crawl.",
 	"answer":"True",
@@ -70,6 +78,7 @@
 
 
 	{
+		"id":9,
 	"difficulty":"easy",
 	"question":"Hyenas eat rotten meat.",
 	"answer":"True",
@@ -79,6 +88,7 @@
 
 
 	{
+		"id":10,
 	"difficulty":"easy",
 	"question":"Monkeys have sharp claws.",
 	"answer":"True",
@@ -88,6 +98,7 @@
 
 
 	{
+		"id":11,
 	"difficulty":"medium",
 	"question":"Monkeys have sharp talons and a long tail.",
 	"answer":"False",
@@ -97,6 +108,7 @@
 
 
 	{
+		"id":12,
 	"difficulty":"easy",
 	"question":"Octupus has eight tentacles.",
 	"answer":"True",
@@ -106,6 +118,7 @@
 
 
 	{
+		"id":13,
 	"difficulty":"easy",
 	"question":"Octopus can spray ink.",
 	"answer":"True",
@@ -115,6 +128,7 @@
 
 
 	{
+		"id":14,
 	"difficulty":"easy",
 	"question":"Crocodiles have huge jaws.",
 	"answer":"True",
@@ -124,6 +138,7 @@
 
 
 	{
+		"id":15,
 	"difficulty":"medium",
 	"question":"Chickens produce crowing sounds at daybreak.",
 	"answer":"False",
@@ -133,6 +148,7 @@
 
 
 	{
+		"id":16,
 	"difficulty":"easy",
 	"question":"Bats hang upside down on trees.",
 	"answer":"True",
@@ -142,6 +158,7 @@
 
 
 	{
+		"id":17,
 	"difficulty":"medium",
 	"question":"Bats cannot fly, they can only hover.",
 	"answer":"False",
@@ -150,6 +167,7 @@
 	},
 
 	{
+		"id":18,
 	"difficulty":"easy",
 	"question":"All squirrels have bushy tails.",
 	"answer":"True",
@@ -158,6 +176,7 @@
 	},
 
 	{
+		"id":19,
 	"difficulty":"easy",
 	"question":"A komodo dragon is a dragon.",
 	"answer":"False",
@@ -166,6 +185,7 @@
 	},
 
 	{
+		"id":20,
 	"difficulty":"easy",
 	"question":"Wolves hunt in packs.",
 	"answer":"True",

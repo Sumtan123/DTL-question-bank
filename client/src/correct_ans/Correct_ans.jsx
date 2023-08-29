@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import './correct_ans.scss';
 import questions from '../../questions/correct_ans.json';
 import { useSpeechSynthesis } from 'react-speech-kit';
-import crow from '../images/crow.png';
+//import crow from '../images/crow.png';
 import Button from 'react-bootstrap/Button';
-import 'bootstrap/dist/css/bootstrap.min.css';
+//import 'bootstrap/dist/css/bootstrap.min.css';
 const Correct_ans = () => {
 	const [option, selectedOption] = useState(null);
 	const { speak } = useSpeechSynthesis();
@@ -21,7 +21,7 @@ const Correct_ans = () => {
 		selectedOption(event.target.value);
 	};
 	const handleSubmit = (param1,param2) => {
-		isAttempted(true)
+		
 		if (param1 === option)
 		{	console.log("true");
 		speak({ text: speakCorrect});
@@ -32,6 +32,9 @@ const Correct_ans = () => {
 			
 
 	}
+		else if(option===null){
+			return
+		}
 		else
 			{console.log("false");
 			isCorrect(prevCorrect => ({
@@ -80,7 +83,7 @@ const Correct_ans = () => {
 							
 						</form>
 						{/*<Button variant='warning' onClick={handleDisplay(question.answer,question.reason)}>Check Reason</Button> */}
-						{(correct[question.id]===true) && <div style={{display:"flex",margin:"10px", justifyContent:"center",alignItems:'center',fontSize:'1.5rem', color:'black',backgroundColor:"lightgreen"}}>You are right kid<br/>{question.answer}</div>}
+						{(correct[question.id]===true) && <div style={{display:"flex",margin:"10px", justifyContent:"center",alignItems:'center',fontSize:'1.5rem', color:'black',backgroundColor:"lightgreen"}}>You are right kid<br/>{question.reason}</div>}
 						{(correct[question.id]===false) && <div style={{display:"flex",margin:"10px", justifyContent:"center",alignItems:'center',fontSize:'1.5rem', color:'black',backgroundColor:"lightgreen"}}>You are wrong kid Try again</div>}
 					</div>
 				</div>
