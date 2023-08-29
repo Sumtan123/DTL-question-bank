@@ -8,7 +8,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const Correct_ans = () => {
 	const [option, selectedOption] = useState(null);
 	const { speak } = useSpeechSynthesis();
-	const [correct,isCorrect]= useState(null);
+	const [correct,isCorrect]= useState({});
+	const [attempt,isAttempted]=useState(null);
 	const text = "Choose the odd one out";
 	const speakCorrect = "That's right you are correct";
 	const isWrong = "Sorry you are wrong kid! try again";
@@ -19,19 +20,27 @@ const Correct_ans = () => {
 		console.log(event.target.value);
 		selectedOption(event.target.value);
 	};
-	const handleSubmit = (param) => {
-		if (param === option)
+	const handleSubmit = (param1,param2) => {
+		isAttempted(true)
+		if (param1 === option)
 		{	console.log("true");
 		speak({ text: speakCorrect});
-			isCorrect(true);
+		isCorrect(prevCorrect => ({
+			...prevCorrect,
+			[param2]: true,
+		  }));
 			
 
 	}
 		else
 			{console.log("false");
-			isCorrect(false);
+			isCorrect(prevCorrect => ({
+				...prevCorrect,
+				[param2]: false,
+			  }));
 			speak({ text:isWrong});}
 	};
+	
 	return (
 		<>
 			{questions.map(question => (
@@ -48,7 +57,7 @@ const Correct_ans = () => {
 							<label>
 								<input type="radio" value="option1" name="ans" onChange={handleOptionChange} />
 								{question.option1}
-								<div><img src={question?.option1_url} alt="" style={{ width: "50%" }} /></div>
+								<div><img src={question?.option1_url} alt="" style={{ width: "30%" }} /></div>
 							</label>
 							<br />
 							<label>
@@ -67,11 +76,12 @@ const Correct_ans = () => {
 								{question.option4}
 								<div><img src={question?.option4_url} alt="" style={{ width: "50%" }} /></div>
 							</label>
-							<Button variant="warning" onClick={() => handleSubmit(question.answer)}>Submit</Button>
+							<Button variant="warning" onClick={() => handleSubmit(question.answer,question.id)}>Submit</Button>
 							
 						</form>
-						{( correct === true )&& <div style={{display:"flex",margin:"10px", justifyContent:"center",alignItems:'center',fontSize:'1.5rem', color:'black',backgroundColor:"lightgreen"}}>You are right Kid <br/>{question.reason}</div>}
-						{( correct === false )&& <div style={{display:"flex",margin:"10px", justifyContent:"center",alignItems:'center',fontSize:'1.5rem',color:'black', backgroundColor:'lightgreen'}}>You are wrong Kid, Try Again</div>}
+						{/*<Button variant='warning' onClick={handleDisplay(question.answer,question.reason)}>Check Reason</Button> */}
+						{(correct[question.id]===true) && <div style={{display:"flex",margin:"10px", justifyContent:"center",alignItems:'center',fontSize:'1.5rem', color:'black',backgroundColor:"lightgreen"}}>You are right kid<br/>{question.answer}</div>}
+						{(correct[question.id]===false) && <div style={{display:"flex",margin:"10px", justifyContent:"center",alignItems:'center',fontSize:'1.5rem', color:'black',backgroundColor:"lightgreen"}}>You are wrong kid Try again</div>}
 					</div>
 				</div>
 			))}
