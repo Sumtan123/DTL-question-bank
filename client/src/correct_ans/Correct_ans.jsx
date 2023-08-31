@@ -61,24 +61,24 @@ const Correct_ans = () => {
 							<label>
 								<input type="radio" value="option1" name="ans" onChange={handleOptionChange} />
 								{question.option1}
-								<div><img src={question?.option1_url} alt="" style={{ width: "30%" }} /></div>
+								<div><img src={question?.option1_url} alt="" style={{ width: "50%"}} /></div>
 							</label>
 							<br />
 							<label>
 								<input type="radio" value="option2" name='ans' onChange={handleOptionChange} />
 								{question.option2}
-								<div><img src={question?.option2_url} alt="" style={{ width: "50%" }} /></div>
+								<div><img src={question?.option2_url} alt="" style={{ width: "50%"}} /></div>
 							</label>
 							<br />
 							<label>
 								<input type="radio" value="option3" name='ans' onChange={handleOptionChange} />
 								{question.option3}
-								<div><img src={question?.option3_url} alt="" style={{ width: "50%" }} /></div>
+								<div><img src={question?.option3_url} alt="" style={{ width: "50%"}} /></div>
 							</label>
 							<label>
 								<input type="radio" value="option4" name='ans' onChange={handleOptionChange} />
 								{question.option4}
-								<div><img src={question?.option4_url} alt="" style={{ width: "50%" }} /></div>
+								<div><img src={question?.option4_url} alt="" style={{ width: "50%"}} /></div>
 							</label>
 							<Button variant="warning" onClick={() => handleSubmit(question.answer,question.id)}>Submit</Button>
 							

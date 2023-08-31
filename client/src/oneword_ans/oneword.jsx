@@ -4,67 +4,90 @@ import questionsData from '../../questions/one_word.json'
 import { useSpeechSynthesis } from 'react-speech-kit';
 const Oneword = () => {
     const [givenAns, setGivenAns] = useState('');
-    const [correct,setCorrect]= useState({});
+    const [correct, setCorrect] = useState({});
     const { speak } = useSpeechSynthesis();
+    const [submitted, setSubmitted] = useState(false);
+    const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const speakCorrect = "That's right, you are correct";
-	const isWrong = "Sorry, you are wrong, try again";
+    const isWrong = "Sorry, you are wrong, try again";
     const handleChange = (e) => {
         setGivenAns(e.target.value)
     }
-    const handleSubmit = (param1,param2) => {
-        const userInput = givenAns.toLowerCase(); 
-        const correctAnswer = param1.toLowerCase(); 
+    const handleNextQuestion = () => {
+        if (submitted) {
+            setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
+            setGivenAns('');
+            setCorrect({});
+            setSubmitted(false);
+        }
+    };
+    const handleSubmit = (param1, param2) => {
+        const userInput = givenAns.toLowerCase();
+        const correctAnswer = param1.toLowerCase();
         if (userInput === correctAnswer) {
             console.log("true");
             setCorrect(true);
-            speak({ text: speakCorrect});
+            speak({ text: speakCorrect });
             setCorrect(prevCorrect => ({
                 ...prevCorrect,
                 [param2]: true,
-              }));
-        } 
-        else if(givenAns===''){
+            }));
+        }
+        else if (givenAns === '') {
             return
         }
-            else {
+        else {
             console.log('false');
             setCorrect(false);
-            speak({ text:isWrong});
+            speak({ text: isWrong });
             setCorrect(prevCorrect => ({
                 ...prevCorrect,
                 [param2]: false,
-              }));
-        }
+            }));
+        }   
+        setSubmitted(true);
     }
-    
+
     return (
         <>
-        <div className="topBar"><h1>Educate</h1></div>
+            <div className="topBar"><h1>Educate</h1></div>
             <div className="onewordbg">
-                {questionsData.map((item) => (
-                    <>
-                        <div className="section">
-                            <h3>Section 1-Fill in the blank</h3>
-                            <h3>Level : {item.difficulty}</h3>
-                        </div>
-                        <div className="template">
-                            <div key={item.id}>
-                                <h3>{item.question}</h3>
+                <div className="section">
+                    <h3>Section 1 - Fill in the blank</h3>
+                    <h3>Level: {questionsData[currentQuestionIndex]?.difficulty}</h3>
+                </div>
+                <div className="template">
+                    <div key={questionsData[currentQuestionIndex]?.id}>
+                        {currentQuestionIndex < questionsData.length ? (
+                            <>
+                                <h3>{questionsData[currentQuestionIndex]?.question}</h3>
                                 <input
                                     type="text"
                                     placeholder="Type your answer here"
                                     className="answer-input"
                                     onChange={handleChange}
+                                    value={givenAns}
                                 />
-                                {correct[item.id] === true && <div className="rw">You are right!!</div>}
-                                {correct[item.id] === false && <div className="rw">Sorry You are wrong, try again</div>}
-                                <button className="submit-button" onClick={() => handleSubmit(item.answer,item.id)}>Submit</button>
-
+                                {correct[questionsData[currentQuestionIndex]?.id] === true && (
+                                    <div className="rw">You are right!!</div>
+                                )}
+                                {correct[questionsData[currentQuestionIndex]?.id] === false && (
+                                    <div className="rw">Sorry, you are wrong, try again</div>
+                                )}
+                                <button className="submit-button" onClick={() => handleSubmit(questionsData[currentQuestionIndex]?.answer, questionsData[currentQuestionIndex]?.id)}>
+                                    Submit
+                                </button>
+                                <button className="next-button" onClick={handleNextQuestion} disabled={!submitted}>
+                                    Next Question
+                                </button>
+                            </>
+                        ) : (
+                            <div className="quiz-over-message">
+                                Quiz Over!
                             </div>
-
-                        </div>
-                    </>
-                ))}
+                        )}
+                    </div>
+                </div>
             </div>
         </>
     )
