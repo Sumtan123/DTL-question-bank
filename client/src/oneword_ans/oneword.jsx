@@ -76,7 +76,7 @@ const Oneword = () => {
                                     <div className="rw">You are right!!</div>
                                 )}
                                 {correct[questionsData[currentQuestionIndex]?.id] === false && (
-                                    <div className="rw">Sorry, you are wrong</div>
+                                    <div className="rw1">Sorry, you are wrong, the correct answer is {questionsData[currentQuestionIndex]?.answer}</div>
                                 )}
                                 <button className="submit-button" onClick={() => handleSubmit(questionsData[currentQuestionIndex]?.answer, questionsData[currentQuestionIndex]?.id, questionsData[currentQuestionIndex]?.points)} disabled={submitted}>
                                     Submit

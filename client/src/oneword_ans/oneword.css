@@ -71,6 +71,13 @@
     margin-top: 300px;
     margin-left: 250px;
   }
+  
+  .rw1{
+    position: absolute;
+    margin-top: 300px;
+    margin-left: 250px;
+    background-color: red;
+  }
 
   .topBar{
     background-color: #ff416e;
