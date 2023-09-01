@@ -79,7 +79,7 @@ const Truefalse = () => {
                                     <div className="rw">You are right!!</div>
                                 )}
                                 {isCorrect[questionsData[currentQuestionIndex]?.id] === false && (
-                                    <div className="rw">Sorry, you are wrong</div>
+                                    <div className="rw1">Sorry, you are wrong</div>
                                 )}
                                 <button className="next-button" onClick={handleNextQuestion} disabled={!submitted}>
                                     Next Question
