@@ -26,7 +26,7 @@ const Oneword = () => {
         const correctAnswer = param1.toLowerCase();
         if (userInput === correctAnswer) {
             console.log("true");
-            setCorrect(true);
+            
             speak({ text: speakCorrect });
             setCorrect(prevCorrect => ({
                 ...prevCorrect,
@@ -38,7 +38,7 @@ const Oneword = () => {
         }
         else {
             console.log('false');
-            setCorrect(false);
+           
             speak({ text: isWrong });
             setCorrect(prevCorrect => ({
                 ...prevCorrect,
