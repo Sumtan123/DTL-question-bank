@@ -41,3 +41,12 @@
     margin-top: 200px;
     color: beige;
   }
+
+  .score1{
+    color:aquamarine;
+    text-align: center;
+  }
+
+  .quiz-over-message1{
+    color: aquamarine;
+  }

@@ -92,7 +92,7 @@
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;
     position:absolute;
-    margin-left:350px;
+    margin-left: 350px;
     margin-top:250px;
   }
   
@@ -104,4 +104,9 @@
     text-align: center;
     padding-top: 220px;
     font-size: large;
+  }
+
+  .score{
+    margin-left: 800px;
+    padding-top: 100px;
   }
