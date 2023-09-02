@@ -9,6 +9,7 @@ const Correct_ans = () => {
 	const [option, selectedOption] = useState(null);
 	const { speak } = useSpeechSynthesis();
 	const [correct,isCorrect]= useState({});
+	const [points, setPoints] = useState(0);
 	const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 	const [submitted, setSubmitted] = useState(false);
 	const text = "Choose the odd one out";
@@ -30,7 +31,7 @@ const Correct_ans = () => {
             setSubmitted(false);
         }
     };
-	const handleSubmit = (param1,param2) => {
+	const handleSubmit = (param1,param2,param3) => {
 		setSubmitted(true);
 		if (param1 === option)
 		{	console.log("true");
@@ -40,6 +41,7 @@ const Correct_ans = () => {
 			...prevCorrect,
 			[param2]: true,
 		  }));
+		  setPoints((prevPoints) => prevPoints + param3);
 			
 
 	}
@@ -95,11 +97,11 @@ const Correct_ans = () => {
 								{questions[currentQuestionIndex].option4}
 								<div><img src={questions[currentQuestionIndex]?.option4_url} alt="" style={{ width: "50%"}} /></div>
 							</label>
-							<button variant="warning" onClick={() => handleSubmit(questions[currentQuestionIndex]?.answer,questions[currentQuestionIndex]?.id)}>Submit</button>
+							<button variant="warning" onClick={() => handleSubmit(questions[currentQuestionIndex]?.answer,questions[currentQuestionIndex]?.id,questions[currentQuestionIndex]?.points) } disabled={submitted}>Submit</button>
 							<button variant="warning" onClick={handleNextQuestion} disabled={!submitted}>
                                     Next Question
                                 </button>
-						
+								<h4 className="score">Points: {points}</h4>
 						{/*<Button variant='warning' onClick={handleDisplay(question.answer,question.reason)}>Check Reason</Button> */}
 						{(correct[questions[currentQuestionIndex]?.id]===true) && <div style={{display:"flex",margin:"10px", justifyContent:"center",alignItems:'center',fontSize:'1.5rem', color:'black',backgroundColor:"lightgreen"}}>You are right kid<br/>{questions[currentQuestionIndex].reason}</div>}
 						{(correct[questions[currentQuestionIndex]?.id]===false) && <div style={{display:"flex",margin:"10px", justifyContent:"center",alignItems:'center',fontSize:'1.5rem', color:'black',backgroundColor:"lightgreen"}}>You are wrong kid Try again</div>}
