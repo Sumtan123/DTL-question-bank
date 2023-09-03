@@ -89,7 +89,8 @@ const Oneword = () => {
                             </>
                         ) : (
                             <div className="quiz-over-message">
-                                Quiz Over! Your total points: {points}
+                                <img className='trophy' src='https://img.freepik.com/free-vector/gold-cup-illustration_1284-17139.jpg?size=626&ext=jpg&ga=GA1.2.1873050670.1691914218&semt=ais'/>
+                                <h5>Quiz Over! Your total points: {points}</h5>
                             </div>
                         )}
                     </div>
