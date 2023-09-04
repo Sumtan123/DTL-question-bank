@@ -79,7 +79,7 @@ const Truefalse = () => {
                                     <div className="rw">You are right!!</div>
                                 )}
                                 {isCorrect[questionsData[currentQuestionIndex]?.id] === false && (
-                                    <div className="rw1">Sorry, you are wrong</div>
+                                    <div className="rw1">Sorry, you are wrong, the reason is : {questionsData[currentQuestionIndex]?.reason}</div>
                                 )}
                                 <button className="next-button" onClick={handleNextQuestion} disabled={!submitted}>
                                     Next Question
@@ -88,7 +88,8 @@ const Truefalse = () => {
                             </>
                         ) : (
                             <div className="quiz-over-message1">
-                                Quiz Over! Your total points: {points}
+                                <img className='trophy' src='https://img.freepik.com/free-vector/gold-cup-illustration_1284-17139.jpg?size=626&ext=jpg&ga=GA1.2.1873050670.1691914218&semt=ais'/>
+                                <h5>Quiz Over! Your total points: {points}</h5>
                             </div>
                         )}
                     </div>
