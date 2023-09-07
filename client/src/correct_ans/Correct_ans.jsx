@@ -101,11 +101,12 @@ const Correct_ans = () => {
 							<button variant="warning" onClick={handleNextQuestion} disabled={!submitted}>
                                     Next Question
                                 </button>
-								<h4 className="score">Points: {points}</h4>
-						{/*<Button variant='warning' onClick={handleDisplay(question.answer,question.reason)}>Check Reason</Button> */}
-						{(correct[questions[currentQuestionIndex]?.id]===true) && <div style={{display:"flex",margin:"10px", justifyContent:"center",alignItems:'center',fontSize:'1.5rem', color:'black',backgroundColor:"lightgreen"}}>You are right kid<br/>{questions[currentQuestionIndex].reason}</div>}
-						{(correct[questions[currentQuestionIndex]?.id]===false) && <div style={{display:"flex",margin:"10px", justifyContent:"center",alignItems:'center',fontSize:'1.5rem', color:'black',backgroundColor:"lightgreen"}}>You are wrong kid Try again</div>}
+								
+							{/*<Button variant='warning' onClick={handleDisplay(question.answer,question.reason)}>Check Reason</Button> */}
+							{(correct[questions[currentQuestionIndex]?.id]===true) && <div style={{display:"flex",margin:"10px", justifyContent:"center",alignItems:'center',fontSize:'1.5rem', color:'black',backgroundColor:"lightgreen"}}>You are right kid<br/>{questions[currentQuestionIndex].reason}</div>}
+							{(correct[questions[currentQuestionIndex]?.id]===false) && <div style={{display:"flex",margin:"10px", justifyContent:"center",alignItems:'center',fontSize:'1.5rem', color:'black',backgroundColor:"lightgreen"}}>You are wrong kid Try again</div>}
 						</div>
+						<h4 className="score">Points: {points}</h4>
 					</div>
 				</div>):(
 					<div className="quiz-over-message">
