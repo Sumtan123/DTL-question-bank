@@ -72,34 +72,32 @@
     font-size: large;
   }
 
-//   .next-button {
-//     background-color: #007bff;
-//     color: white;
-//     padding: 10px 10px;
-//     border: none;
-//     border-radius: 4px;
-//     font-size: 16px;
-//     cursor: pointer;
-//     transition: background-color 0.2s ease-in-out;
-//     // position:absolute;
-//     margin-left:30px;
-//     margin-top:20px;
-//   }
-
-  .submit-button {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
+  .normal-button {
+    background-color: #67abef; /* Green */
     border: none;
-    border-radius: 4px;
+    color: white;
+    padding: 5px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
     font-size: 16px;
+    margin: 4px 2px;
     cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-    position:absolute;
-    margin-left:250px;
-    margin-top:250px;
+    border-radius: 8px;
   }
-  
-  .submit-button:hover {
-    background-color: #0056b3;
-  }
+
+  .normal-next {
+    background-color: #87ef67; /* Green */
+    border: none;
+    color: white;
+    padding: 5px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+  }  
+
+ 

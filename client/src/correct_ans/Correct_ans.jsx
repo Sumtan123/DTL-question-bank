@@ -97,8 +97,8 @@ const Correct_ans = () => {
 								{questions[currentQuestionIndex].option4}
 								<div><img src={questions[currentQuestionIndex]?.option4_url} alt="" style={{ width: "50%"}} /></div>
 							</label>
-							<button variant="warning" onClick={() => handleSubmit(questions[currentQuestionIndex]?.answer,questions[currentQuestionIndex]?.id,questions[currentQuestionIndex]?.points) } disabled={submitted}>Submit</button>
-							<button variant="warning" onClick={handleNextQuestion} disabled={!submitted}>
+							<button className='normal-button' onClick={() => handleSubmit(questions[currentQuestionIndex]?.answer,questions[currentQuestionIndex]?.id,questions[currentQuestionIndex]?.points) } disabled={submitted}>Submit</button>
+							<button className='normal-next' onClick={handleNextQuestion} disabled={!submitted}>
                                     Next Question
                                 </button>
 								
