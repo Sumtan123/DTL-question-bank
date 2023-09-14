@@ -122,6 +122,33 @@
     width: 100px;
     margin-top: -50px;
   }
+  
+  .thumbs-up-animation {
+    position: relative;
+    animation-name: bounce;
+    animation-duration: 1s;
+  }
+  
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-20px);
+    }
+    60% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  .thumbs-up-icon {
+    font-size: 7rem; /* Adjust the size as needed */
+    color: #00cc00; /* Adjust the color as needed */
+    position: absolute;
+    left: 70%;
+    transform: translateX(-50%);
+    opacity: 0.7;
+  }
 
 
 

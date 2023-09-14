@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './oneword.css'
 import questionsData from '../../questions/one_word.json'
 import { useSpeechSynthesis } from 'react-speech-kit';
@@ -9,6 +9,8 @@ const Oneword = () => {
     const [submitted, setSubmitted] = useState(false);
     const [points, setPoints] = useState(0);
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+    const [showThumbsUp, setShowThumbsUp] = useState(false);
+    const [playClappingMusic, setPlayClappingMusic] = useState(false);
     const speakCorrect = "That's right, you are correct";
     const isWrong = "Sorry, you are wrong";
     const handleChange = (e) => {
@@ -22,6 +24,18 @@ const Oneword = () => {
             setSubmitted(false);
         }
     };
+    const clappingAudio = new Audio('clapping.mp3');
+
+    useEffect(() => {
+        if (playClappingMusic) {
+            clappingAudio.play();
+            setTimeout(() => {
+                clappingAudio.pause();
+                clappingAudio.currentTime = 0;
+            }, 2000);
+        }
+    }, [playClappingMusic]);
+
     const handleSubmit = (param1, param2, points) => {
         const userInput = givenAns.toLowerCase();
         const correctAnswer = param1.toLowerCase();
@@ -34,6 +48,11 @@ const Oneword = () => {
                 [param2]: true,
             }));
             setPoints((prevPoints) => prevPoints + points);
+            setShowThumbsUp(true);
+            setTimeout(() => {
+                setShowThumbsUp(false);
+            }, 2000); 
+            setPlayClappingMusic(true);        
         }
         else if (givenAns === '') {
             return
@@ -89,8 +108,15 @@ const Oneword = () => {
                             </>
                         ) : (
                             <div className="quiz-over-message">
-                                <img className='trophy' src='https://img.freepik.com/free-vector/gold-cup-illustration_1284-17139.jpg?size=626&ext=jpg&ga=GA1.2.1873050670.1691914218&semt=ais'/>
+                                <img className='trophy' src='https://img.freepik.com/free-vector/gold-cup-illustration_1284-17139.jpg?size=626&ext=jpg&ga=GA1.2.1873050670.1691914218&semt=ais' />
                                 <h5>Quiz Over! Your total points: {points}</h5>
+                            </div>
+                        )}
+                        {showThumbsUp && (
+                            <div className="thumbs-up-animation">
+                                <span className="thumbs-up-icon" role="img" aria-label="Thumbs Up">
+                                    👍
+                                </span>
                             </div>
                         )}
                     </div>

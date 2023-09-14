@@ -14,7 +14,7 @@ const Correct_ans = () => {
 	const [submitted, setSubmitted] = useState(false);
 	const text = "Choose the odd one out";
 	const speakCorrect = "That's right you are correct";
-	const isWrong = "Sorry you are wrong kid! try again";
+	const isWrong = "Sorry you are wrong!";
 	const handleOnClick = () => {
 		speak({ text:text  });
 	};
@@ -103,8 +103,8 @@ const Correct_ans = () => {
                                 </button>
 								
 							{/*<Button variant='warning' onClick={handleDisplay(question.answer,question.reason)}>Check Reason</Button> */}
-							{(correct[questions[currentQuestionIndex]?.id]===true) && <div style={{display:"flex",margin:"10px", justifyContent:"center",alignItems:'center',fontSize:'1.5rem', color:'black',backgroundColor:"lightgreen"}}>You are right kid<br/>{questions[currentQuestionIndex].reason}</div>}
-							{(correct[questions[currentQuestionIndex]?.id]===false) && <div style={{display:"flex",margin:"10px", justifyContent:"center",alignItems:'center',fontSize:'1.5rem', color:'black',backgroundColor:"lightgreen"}}>You are wrong kid Try again</div>}
+							{(correct[questions[currentQuestionIndex]?.id]===true) && <div style={{display:"flex",margin:"10px", justifyContent:"center",alignItems:'center',fontSize:'1.5rem', color:'black',backgroundColor:"lightgreen"}}>You are right!<br/>{questions[currentQuestionIndex].reason}</div>}
+							{(correct[questions[currentQuestionIndex]?.id]===false) && <div style={{display:"flex",margin:"10px", justifyContent:"center",alignItems:'center',fontSize:'1.5rem', color:'black',backgroundColor:"red"}}>Sorry, you are wrong!</div>}
 						</div>
 						<h4 className="score">Points: {points}</h4>
 					</div>
