@@ -10,7 +10,9 @@ const Oneword = () => {
     const [points, setPoints] = useState(0);
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [showThumbsUp, setShowThumbsUp] = useState(false);
+    const [showThumbsDown, setShowThumbsDown] = useState(false);
     const [playClappingMusic, setPlayClappingMusic] = useState(false);
+    const [playNegativeMusic, setPlayNegativeMusic] = useState(false);
     const speakCorrect = "That's right, you are correct";
     const isWrong = "Sorry, you are wrong";
     const handleChange = (e) => {
@@ -25,17 +27,28 @@ const Oneword = () => {
         }
     };
     const clappingAudio = new Audio('clapping.mp3');
-
+    const wrong = new Audio('negative.mp3')
     useEffect(() => {
         if (playClappingMusic) {
             clappingAudio.play();
             setTimeout(() => {
                 clappingAudio.pause();
                 clappingAudio.currentTime = 0;
+                setPlayClappingMusic(false);
             }, 2000);
         }
     }, [playClappingMusic]);
 
+    useEffect(() => {
+        if (playNegativeMusic) {
+            wrong.play();
+            setTimeout(() => {
+                wrong.pause();
+                wrong.currentTime = 0;
+                setPlayNegativeMusic(false);
+            }, 2000);
+        }
+    }, [playNegativeMusic]);
     const handleSubmit = (param1, param2, points) => {
         const userInput = givenAns.toLowerCase();
         const correctAnswer = param1.toLowerCase();
@@ -65,6 +78,11 @@ const Oneword = () => {
                 ...prevCorrect,
                 [param2]: false,
             }));
+            setShowThumbsDown(true);
+            setTimeout(() => {
+                setShowThumbsDown(false);
+            }, 2000); 
+            setPlayNegativeMusic(true);
         }
         setSubmitted(true);
     }
@@ -116,6 +134,13 @@ const Oneword = () => {
                             <div className="thumbs-up-animation">
                                 <span className="thumbs-up-icon" role="img" aria-label="Thumbs Up">
                                     👍
+                                </span>
+                            </div>
+                        )}
+                        {showThumbsDown && (
+                            <div className="thumbs-up-animation">
+                                <span className="thumbs-up-icon" role="img" aria-label="Thumbs Up">
+                                👎
                                 </span>
                             </div>
                         )}
