@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './correct_ans.scss';
 import questions from '../../questions/correct_ans.json';
 import { useSpeechSynthesis } from 'react-speech-kit';
@@ -12,6 +12,10 @@ const Correct_ans = () => {
 	const [points, setPoints] = useState(0);
 	const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 	const [submitted, setSubmitted] = useState(false);
+	const [showThumbsUp, setShowThumbsUp] = useState(false);
+    const [showThumbsDown, setShowThumbsDown] = useState(false);
+    const [playClappingMusic, setPlayClappingMusic] = useState(false);
+    const [playNegativeMusic, setPlayNegativeMusic] = useState(false);
 	const text = "Choose the odd one out";
 	const speakCorrect = "That's right you are correct";
 	const isWrong = "Sorry you are wrong!";
@@ -31,6 +35,29 @@ const Correct_ans = () => {
             setSubmitted(false);
         }
     };
+	const clappingAudio = new Audio('clapping.mp3');
+    const wrong = new Audio('negative.mp3')
+    useEffect(() => {
+        if (playClappingMusic) {
+            clappingAudio.play();
+            setTimeout(() => {
+                clappingAudio.pause();
+                clappingAudio.currentTime = 0;
+                setPlayClappingMusic(false);
+            }, 2000);
+        }
+    }, [playClappingMusic]);
+
+    useEffect(() => {
+        if (playNegativeMusic) {
+            wrong.play();
+            setTimeout(() => {
+                wrong.pause();
+                wrong.currentTime = 0;
+                setPlayNegativeMusic(false);
+            }, 2000);
+        }
+    }, [playNegativeMusic]);
 	const handleSubmit = (param1,param2,param3) => {
 		setSubmitted(true);
 		if (param1 === option)
@@ -42,7 +69,11 @@ const Correct_ans = () => {
 			[param2]: true,
 		  }));
 		  setPoints((prevPoints) => prevPoints + param3);
-			
+		  setShowThumbsUp(true);
+		  setTimeout(() => {
+			  setShowThumbsUp(false);
+		  }, 2000); 
+		  setPlayClappingMusic(true);  
 
 	}
 		else if(option===null){
@@ -57,6 +88,11 @@ const Correct_ans = () => {
 				[param2]: false,
 			  }));
 			speak({ text:isWrong});
+			setShowThumbsDown(true);
+            setTimeout(() => {
+                setShowThumbsDown(false);
+            }, 2000); 
+            setPlayNegativeMusic(true);
 		}
 			
 	};
@@ -101,19 +137,38 @@ const Correct_ans = () => {
 							<button className='normal-next' onClick={handleNextQuestion} disabled={!submitted}>
                                     Next Question
                                 </button>
-								
-							{/*<Button variant='warning' onClick={handleDisplay(question.answer,question.reason)}>Check Reason</Button> */}
+							
+							
+						</div>
+						<div>
 							{(correct[questions[currentQuestionIndex]?.id]===true) && <div style={{display:"flex",margin:"10px", justifyContent:"center",alignItems:'center',fontSize:'1.5rem', color:'black',backgroundColor:"lightgreen"}}>You are right!<br/>{questions[currentQuestionIndex].reason}</div>}
 							{(correct[questions[currentQuestionIndex]?.id]===false) && <div style={{display:"flex",margin:"10px", justifyContent:"center",alignItems:'center',fontSize:'1.5rem', color:'black',backgroundColor:"red"}}>Sorry, you are wrong!</div>}
-						</div>
+							</div>
+							
 						<h4 className="score">Points: {points}</h4>
+						{showThumbsUp && (
+                            <div className="thumbs-up-animation">
+                                <span className="thumbs-up-icon" role="img" aria-label="Thumbs Up">
+                                    👍
+                                </span>
+                            </div>
+                        )}
+                        {showThumbsDown && (
+                            <div className="thumbs-up-animation">
+                                <span className="thumbs-up-icon" role="img" aria-label="Thumbs Up">
+                                👎
+                                </span>
+                            </div>
+                        )}
+			
 					</div>
 				</div>):(
 					<div className="quiz-over-message">
-                                Quiz Over!
+					<img className='trophy' src='https://img.freepik.com/free-vector/gold-cup-illustration_1284-17139.jpg?size=626&ext=jpg&ga=GA1.2.1873050670.1691914218&semt=ais' />
+                                <h5>Quiz Over! Your total points: {points}</h5>
                             </div>
 				)}
-			
+				
 		</>
 	);
 };

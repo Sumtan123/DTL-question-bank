@@ -100,4 +100,11 @@
     border-radius: 8px;
   }  
 
- 
+  .thumbs-up-icon {
+    font-size: 7rem; /* Adjust the size as needed */
+    color: #00cc00; /* Adjust the color as needed */
+    position: absolute;
+    left: 70%;
+    transform: translateX(-50%);
+    opacity: 0.7;
+  }
