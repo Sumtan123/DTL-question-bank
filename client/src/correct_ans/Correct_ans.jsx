@@ -111,33 +111,38 @@ const Correct_ans = () => {
 					</div>
 					<div className="right">
 						<div className="formi">
+						<div className='form2'>
 							<label>
 								<input type="radio" value="option1" name="ans" onChange={handleOptionChange} />
 								{questions[currentQuestionIndex].option1}
-								<div><img src={questions[currentQuestionIndex]?.option1_url} alt="" style={{ width: "50%"}} /></div>
+								<div><img src={questions[currentQuestionIndex]?.option1_url} alt="" style={{ width: "25%"}} /></div>
 							</label>
-							<br />
+							
 							<label>
 								<input type="radio" value="option2" name='ans' onChange={handleOptionChange} />
 								{questions[currentQuestionIndex].option2}
-								<div><img src={questions[currentQuestionIndex]?.option2_url} alt="" style={{ width: "50%"}} /></div>
+								<div><img src={questions[currentQuestionIndex]?.option2_url} alt="" style={{ width: "25%"}} /></div>
 							</label>
-							<br />
+						</div>
+							
+						<div className='form2'>
 							<label>
 								<input type="radio" value="option3" name='ans' onChange={handleOptionChange} />
 								{questions[currentQuestionIndex].option3}
-								<div><img src={questions[currentQuestionIndex]?.option3_url} alt="" style={{ width: "50%"}} /></div>
+								<div><img src={questions[currentQuestionIndex]?.option3_url} alt="" style={{ width: "25%"}} /></div>
 							</label>
 							<label>
 								<input type="radio" value="option4" name='ans' onChange={handleOptionChange} />
 								{questions[currentQuestionIndex].option4}
-								<div><img src={questions[currentQuestionIndex]?.option4_url} alt="" style={{ width: "50%"}} /></div>
+								<div><img src={questions[currentQuestionIndex]?.option4_url} alt="" style={{ width: "25%"}} /></div>
 							</label>
+						</div>
+						<div className='form2'>
 							<button className='normal-button' onClick={() => handleSubmit(questions[currentQuestionIndex]?.answer,questions[currentQuestionIndex]?.id,questions[currentQuestionIndex]?.points) } disabled={submitted}>Submit</button>
 							<button className='normal-next' onClick={handleNextQuestion} disabled={!submitted}>
                                     Next Question
                                 </button>
-							
+						</div>
 							
 						</div>
 						<div>
@@ -145,7 +150,7 @@ const Correct_ans = () => {
 							{(correct[questions[currentQuestionIndex]?.id]===false) && <div style={{display:"flex",margin:"10px", justifyContent:"center",alignItems:'center',fontSize:'1.5rem', color:'black',backgroundColor:"red"}}>Sorry, you are wrong!</div>}
 							</div>
 							
-						<h4 className="score">Points: {points}</h4>
+						<h2 className="score">Points: {points}</h2>
 						{showThumbsUp && (
                             <div className="thumbs-up-animation">
                                 <span className="thumbs-up-icon" role="img" aria-label="Thumbs Up">

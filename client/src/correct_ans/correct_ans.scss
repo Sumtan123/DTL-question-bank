@@ -12,7 +12,7 @@
   }
 .correct{
     // background: url("../images/correct_bg.jpeg.jpg") fixed center no-repeat;
-   height: 40rem;
+   height: 50rem;
    margin-bottom: 30px;
    background-image: url(../images/correct_bg.jpeg.jpg);
     background-size: cover;
@@ -38,7 +38,7 @@
 
             .questiona{
                 position: absolute;
-                top: 140px;
+                top: 200px;
                 margin-left: 80px;
                 margin-top: 40px;
                 color: #ff416e;
@@ -54,14 +54,21 @@
         .formi{
             display: flex;
             margin-top: 150px;
+            flex-direction: column;
             justify-content: center;
+            .form2{
+                display: flex;
+                justify-content: center;
+                padding: 20px;
             label{
                 margin: 0px;
+                
             }
             button{
                 height: 50%;
                 margin: 10px;
             }
+        }
         }
     }
 }
