@@ -114,27 +114,27 @@ const Correct_ans = () => {
 						<div className='form2'>
 							<label>
 								<input type="radio" value="option1" name="ans" onChange={handleOptionChange} />
-								{questions[currentQuestionIndex].option1}
-								<div><img src={questions[currentQuestionIndex]?.option1_url} alt="" style={{ width: "25%"}} /></div>
+								<h3>{questions[currentQuestionIndex].option1}</h3>
+								<div><img src={questions[currentQuestionIndex]?.option1_url} alt="" style={{ width: "30%"}} /></div>
 							</label>
 							
 							<label>
 								<input type="radio" value="option2" name='ans' onChange={handleOptionChange} />
-								{questions[currentQuestionIndex].option2}
-								<div><img src={questions[currentQuestionIndex]?.option2_url} alt="" style={{ width: "25%"}} /></div>
+								<h3>{questions[currentQuestionIndex].option2}</h3>
+								<div><img src={questions[currentQuestionIndex]?.option2_url} alt="" style={{ width: "30%"}} /></div>
 							</label>
 						</div>
 							
 						<div className='form2'>
 							<label>
 								<input type="radio" value="option3" name='ans' onChange={handleOptionChange} />
-								{questions[currentQuestionIndex].option3}
-								<div><img src={questions[currentQuestionIndex]?.option3_url} alt="" style={{ width: "25%"}} /></div>
+								<h3>{questions[currentQuestionIndex].option3}</h3>
+								<div><img src={questions[currentQuestionIndex]?.option3_url} alt="" style={{ width: "30%"}} /></div>
 							</label>
 							<label>
 								<input type="radio" value="option4" name='ans' onChange={handleOptionChange} />
-								{questions[currentQuestionIndex].option4}
-								<div><img src={questions[currentQuestionIndex]?.option4_url} alt="" style={{ width: "25%"}} /></div>
+								<h3>{questions[currentQuestionIndex].option4}</h3>
+								<div><img src={questions[currentQuestionIndex]?.option4_url} alt="" style={{ width: "30%"}} /></div>
 							</label>
 						</div>
 						<div className='form2'>
@@ -150,17 +150,17 @@ const Correct_ans = () => {
 							{(correct[questions[currentQuestionIndex]?.id]===false) && <div style={{display:"flex",margin:"10px", justifyContent:"center",alignItems:'center',fontSize:'1.5rem', color:'black',backgroundColor:"red"}}>Sorry, you are wrong!</div>}
 							</div>
 							
-						<h2 className="score">Points: {points}</h2>
+						<h2 className="score1">Points: {points}</h2>
 						{showThumbsUp && (
                             <div className="thumbs-up-animation">
-                                <span className="thumbs-up-icon" role="img" aria-label="Thumbs Up">
+                                <span className="thumbs-up-icon1" role="img" aria-label="Thumbs Up">
                                     👍
                                 </span>
                             </div>
                         )}
                         {showThumbsDown && (
                             <div className="thumbs-up-animation">
-                                <span className="thumbs-up-icon" role="img" aria-label="Thumbs Up">
+                                <span className="thumbs-up-icon1" role="img" aria-label="Thumbs Up">
                                 👎
                                 </span>
                             </div>
