@@ -150,7 +150,7 @@ const Correct_ans = () => {
 							{(correct[questions[currentQuestionIndex]?.id]===false) && <div style={{display:"flex",margin:"10px", justifyContent:"center",alignItems:'center',fontSize:'1.5rem', color:'black',backgroundColor:"red"}}>Sorry, you are wrong!</div>}
 							</div>
 							
-						<h2 className="score1">Points: {points}</h2>
+						<h2 className="score2">Points: {points}</h2>
 						{showThumbsUp && (
                             <div className="thumbs-up-animation">
                                 <span className="thumbs-up-icon1" role="img" aria-label="Thumbs Up">
