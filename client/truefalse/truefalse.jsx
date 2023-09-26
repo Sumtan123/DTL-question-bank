@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './truefalse.css'
 import questionsData from '../questions/true_false.json'
-import { useSpeechSynthesis } from 'react-speech-kit';
+//import { useSpeechSynthesis } from 'react-speech-kit';
 const Truefalse = () => {
     const [selectedOption, setSelectedOption] = useState(null);
     const [isCorrect, setIsCorrect] = useState({});
@@ -12,9 +12,11 @@ const Truefalse = () => {
     const [showThumbsDown, setShowThumbsDown] = useState(false);
     const [playClappingMusic, setPlayClappingMusic] = useState(false);
     const [playNegativeMusic, setPlayNegativeMusic] = useState(false);
-    const { speak } = useSpeechSynthesis();
-    const speakCorrect = "That's right you are correct";
-    const isWrong = "Sorry you are wrong";
+    const [playRightMusic, setPlayRightMusic] = useState(false);
+    const [playWrongMusic, setPlayWrongMusic] = useState(false);
+    //const { speak } = useSpeechSynthesis();
+    //const speakCorrect = "That's right you are correct";
+    //const isWrong = "Sorry you are wrong";
     const handleOptionChange = (event) => {
         console.log(event.target.value);
         setSelectedOption(event.target.value);
@@ -30,6 +32,8 @@ const Truefalse = () => {
     };
     const clappingAudio = new Audio('clapping.mp3');
     const wrong = new Audio('negative.mp3')
+    const correctgirl = new Audio('ThatsRightUAreCorrect.mp3')
+    const wronggirl = new Audio('SorryUAreWrong.mp3')
     useEffect(() => {
         if (playClappingMusic) {
             clappingAudio.play();
@@ -50,11 +54,32 @@ const Truefalse = () => {
             }, 2000);
         }
     }, [playNegativeMusic]);
+    useEffect(() => {
+        if (playRightMusic) {
+            correctgirl.play();
+            setTimeout(() => {
+                correctgirl.pause();
+                correctgirl.currentTime = 0;
+                setPlayRightMusic(false);
+            }, 2000);
+        }
+    }, [playRightMusic]);
+
+    useEffect(() => {
+        if (playWrongMusic) {
+            wronggirl.play();
+            setTimeout(() => {
+                wronggirl.pause();
+                wronggirl.currentTime = 0;
+                setPlayWrongMusic(false);
+            }, 2000);
+        }
+    }, [playWrongMusic]);
     const handleSubmit = (param1, param2, points) => {
         if (param1 === selectedOption) {
             console.log("true");
 
-            speak({ text: speakCorrect });
+            //speak({ text: speakCorrect });
             setIsCorrect(prevCorrect => ({
                 ...prevCorrect,
                 [param2]: true,
@@ -65,6 +90,7 @@ const Truefalse = () => {
                 setShowThumbsUp(false);
             }, 2000); 
             setPlayClappingMusic(true);
+            setPlayRightMusic(true);
         }
         else if (selectedOption === null) {
             return
@@ -73,7 +99,7 @@ const Truefalse = () => {
         else {
             console.log("false");
 
-            speak({ text: isWrong });
+            //speak({ text: isWrong });
             setIsCorrect(prevCorrect => ({
                 ...prevCorrect,
                 [param2]: false,
@@ -83,6 +109,7 @@ const Truefalse = () => {
                 setShowThumbsDown(false);
             }, 2000); 
             setPlayNegativeMusic(true);
+            setPlayWrongMusic(true);
         }
         setSubmitted(true);
     };

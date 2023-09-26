@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import './correct_ans.scss';
 import questions from '../../questions/correct_ans.json';
-import { useSpeechSynthesis } from 'react-speech-kit';
+//import { useSpeechSynthesis } from 'react-speech-kit';
 //import crow from '../images/crow.png';
 import Button from 'react-bootstrap/Button';
 //import 'bootstrap/dist/css/bootstrap.min.css';
 const Correct_ans = () => {
 	const [option, selectedOption] = useState(null);
-	const { speak } = useSpeechSynthesis();
+	//const { speak } = useSpeechSynthesis();
 	const [correct,isCorrect]= useState({});
 	const [points, setPoints] = useState(0);
 	const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -16,12 +16,14 @@ const Correct_ans = () => {
     const [showThumbsDown, setShowThumbsDown] = useState(false);
     const [playClappingMusic, setPlayClappingMusic] = useState(false);
     const [playNegativeMusic, setPlayNegativeMusic] = useState(false);
-	const text = "Choose the odd one out";
-	const speakCorrect = "That's right you are correct";
-	const isWrong = "Sorry you are wrong!";
-	const handleOnClick = () => {
-		speak({ text:text  });
-	};
+	const [playRightMusic, setPlayRightMusic] = useState(false);
+    const [playWrongMusic, setPlayWrongMusic] = useState(false);
+	//const text = "Choose the odd one out";
+	//const speakCorrect = "That's right you are correct";
+	//const isWrong = "Sorry you are wrong!";
+	// const handleOnClick = () => {
+	// 	speak({ text:text  });
+	// };
 	const handleOptionChange = (event) => {
 		console.log(event.target.value);
 		selectedOption(event.target.value);
@@ -37,6 +39,8 @@ const Correct_ans = () => {
     };
 	const clappingAudio = new Audio('clapping.mp3');
     const wrong = new Audio('negative.mp3')
+	const correctgirl = new Audio('ThatsRightUAreCorrect.mp3')
+    const wronggirl = new Audio('SorryUAreWrong.mp3')
     useEffect(() => {
         if (playClappingMusic) {
             clappingAudio.play();
@@ -58,12 +62,33 @@ const Correct_ans = () => {
             }, 2000);
         }
     }, [playNegativeMusic]);
+	useEffect(() => {
+        if (playRightMusic) {
+            correctgirl.play();
+            setTimeout(() => {
+                correctgirl.pause();
+                correctgirl.currentTime = 0;
+                setPlayRightMusic(false);
+            }, 2000);
+        }
+    }, [playRightMusic]);
+
+    useEffect(() => {
+        if (playWrongMusic) {
+            wronggirl.play();
+            setTimeout(() => {
+                wronggirl.pause();
+                wronggirl.currentTime = 0;
+                setPlayWrongMusic(false);
+            }, 2000);
+        }
+    }, [playWrongMusic]);
 	const handleSubmit = (param1,param2,param3) => {
 		setSubmitted(true);
 		if (param1 === option)
 		{	console.log("true");
 		
-		speak({ text: speakCorrect});
+		//speak({ text: speakCorrect});
 		isCorrect(prevCorrect => ({
 			...prevCorrect,
 			[param2]: true,
@@ -74,7 +99,7 @@ const Correct_ans = () => {
 			  setShowThumbsUp(false);
 		  }, 2000); 
 		  setPlayClappingMusic(true);  
-
+		  setPlayRightMusic(true);
 	}
 		else if(option===null){
 			return
@@ -87,12 +112,13 @@ const Correct_ans = () => {
 				...prevCorrect,
 				[param2]: false,
 			  }));
-			speak({ text:isWrong});
+			//speak({ text:isWrong});
 			setShowThumbsDown(true);
             setTimeout(() => {
                 setShowThumbsDown(false);
             }, 2000); 
             setPlayNegativeMusic(true);
+			setPlayWrongMusic(true);
 		}
 			
 	};
@@ -103,7 +129,7 @@ const Correct_ans = () => {
 		{currentQuestionIndex < questions.length ? (
 				<div className='correct'>
 					<div className="left">
-						<div className="talk" onClick={handleOnClick}>
+						<div className="talk" /*onClick={handleOnClick}*/>
 							<div className="questiona">
 								Choose the Odd one Out!!
 							</div>
